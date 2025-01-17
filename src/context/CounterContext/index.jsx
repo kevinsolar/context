@@ -5,7 +5,7 @@ export const CounterContext = createContext();
 
 // 2 - Criar Provider
 export const CounterContextProvider = ({ children }) => {
-	const [counter, setCounter] = useState(1);
+	const [counter, setCounter] = useState(0);
 
 	return (
 		<CounterContext.Provider value={{ counter, setCounter }}>
