@@ -1,4 +1,15 @@
 //1 - importar contexto
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from "react";
 
-export default CounterContext = createContext();
+export const CounterContext = createContext();
+
+// 2 - Criar Provider
+export const CounterContextProvider = ({ children }) => {
+	const [counter, setCounter] = useState(1);
+
+	return (
+		<CounterContext.Provider value={{ counter, setCounter }}>
+			{children}
+		</CounterContext.Provider>
+	);
+};
