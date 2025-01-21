@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App.jsx";
 
 import { CounterContextProvider } from "./context/CounterContext/index.jsx";
+import { TitleColorContextProvider } from "./context/TitleColorContext/index.jsx";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-      {/* 2 - Criando o provider, para que ele renderize o App como children */}
+		{/* 2 - Criando o provider, para que ele renderize o App como children */}
 		<CounterContextProvider>
-			<App />
+			<TitleColorContextProvider>
+				<App />
+			</TitleColorContextProvider>
 		</CounterContextProvider>
 	</StrictMode>
 );
